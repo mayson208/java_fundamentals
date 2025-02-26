@@ -24,3 +24,52 @@ package labs_examples.inheritance.labs;
  *
  */
 
+class Class1 {
+    private String name;
+    private int age;
+
+    public Class1(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+class Class2 extends Class1 {
+    private String job;
+
+    public Class2(String name, int age, String job) {
+        super(name, age);
+        this.job = job;
+    }
+
+    public String getJob() {
+        return job;
+    }
+}
+
+class Class3 extends Class2 {
+    private String hobby;
+
+    public Class3(String name, int age, String job, String hobby) {
+        super(name, age, job);
+        this.hobby = hobby;
+    }
+
+    public String getHobby() {
+        return hobby;
+    }
+}
+
+public class Exercise_01 {
+    public static void main(String[] args) {
+        Class3 obj = new Class3("Alice", 30, "Developer", "Photography");
+    }
+}

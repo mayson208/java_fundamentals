@@ -9,10 +9,21 @@ package labs_examples.datatypes_operators.labs;
  */
 
 public class Exercise_06 {
-
     public static void main(String[] args) {
+            double radius = 3.14;
+            double height = 5;
 
-        // write code here
+            double volume = Math.PI * Math.pow(radius, 2) * height;
+            double surfaceArea = 2 * Math.PI * radius * (radius + height);
 
+            System.out.println("Volume of the cylinder: " + volume);
+            System.out.println("Surface area of the cylinder: " + surfaceArea);
+        }
     }
-}
+
+
+
+
+
+
+

@@ -9,10 +9,9 @@ import java.util.Arrays;
  *
  */
 
-class Example {
-
-    public static void main(String[] args) {
-
+    public class Exercise_05 {
+        public static void main(String[] args) {
+            throw new RuntimeException("This is a thrown exception.");
     }
 
 }

@@ -17,13 +17,21 @@ public class Exercise_07 {
     public static void main(String[] args) {
 
         // create scanner
-        Scanner scanner = new Scanner(System.in);
         // prompt user
-        System.out.print("Enter a number in days between 1 and 1,000,000: ");
         // assign input to variable as int
+        // write completed code here
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number in days between 1 and 1,000,000: ");
         int days = scanner.nextInt();
 
-        // write completed code here
+        if (days < 1 || days > 1_000_000) {
+            System.out.println("Invalid input. Please enter a number between 1 and 1,000,000.");
+        } else {
+            long seconds = (long) days * 24 * 60 * 60;
+            System.out.println(days + " days is equal to " + seconds + " seconds.");
+        }
 
+        scanner.close();
     }
 }

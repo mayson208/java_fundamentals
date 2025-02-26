@@ -8,3 +8,25 @@ package labs_examples.generics.labs;
  *          dynamic usage.
  */
 
+public class Exercise_01<T, U> {
+    private T first;
+    private U second;
+
+    public Exercise_01(T first, U second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public T getFirst() {
+        return first;
+    }
+
+    public U getSecond() {
+        return second;
+    }
+
+    public static void main(String[] args) {
+        Exercise_01<String, Integer> obj1 = new Exercise_01<>("Hello", 123);
+        Exercise_01<Integer, Double> obj2 = new Exercise_01<>(456, 78.9);
+    }
+}
