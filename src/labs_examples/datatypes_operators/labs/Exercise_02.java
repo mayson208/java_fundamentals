@@ -23,7 +23,13 @@ public class Exercise_02 {
 
     public static void main(String[] args) {
 
-        // write code here
+        int myInt = 10;
+        double myDouble = myInt; // Implicit conversion from int to double
+        System.out.println("Widened double value: " + myDouble);
+
+        double myDouble2 = 10.5;
+        int myInt2 = (int) myDouble2; // Explicit casting from double to int
+        System.out.println("Narrowed int value: " + myInt2);
 
     }
 }

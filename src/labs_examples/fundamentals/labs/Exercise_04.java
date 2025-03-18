@@ -15,7 +15,6 @@ public class Exercise_04 {
         int i = 1;
         System.out.println("int i is: " + i);
 
-        // write your code below
 
     }
 
