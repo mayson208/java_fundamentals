@@ -9,3 +9,100 @@ Please create two classes that demonstrate the following:
 6) A non-static method calling a non-static method in another class
 7) A non-static method calling a static method in the same class
 8) A non-static method calling a static method in another class
+
+// ClassA.java
+public class ClassA {
+
+    // 1) A static method calling another static method in the same class
+    public static void staticMethod1() {
+        System.out.println("Static Method 1 in ClassA");
+        staticMethod2();
+    }
+
+    public static void staticMethod2() {
+        System.out.println("Static Method 2 in ClassA");
+    }
+
+    // 2) A static method calling a non-static method in the same class
+    public static void staticMethod3() {
+        System.out.println("Static Method 3 in ClassA");
+        ClassA obj = new ClassA();
+        obj.nonStaticMethod1();
+    }
+
+    public void nonStaticMethod1() {
+        System.out.println("Non-static Method 1 in ClassA");
+    }
+
+    // 5) A non-static method calling a non-static method in the same class
+    public void nonStaticMethod2() {
+        System.out.println("Non-static Method 2 in ClassA");
+        nonStaticMethod1();
+    }
+
+    // 7) A non-static method calling a static method in the same class
+    public void nonStaticMethod3() {
+        System.out.println("Non-static Method 3 in ClassA");
+        staticMethod2();
+    }
+
+    // 3) A static method calling a static method in another class
+    public static void staticMethod4() {
+        System.out.println("Static Method 4 in ClassA");
+        ClassB.staticMethod1();
+    }
+
+    // 4) A static method calling a non-static method in another class
+    public static void staticMethod5() {
+        System.out.println("Static Method 5 in ClassA");
+        ClassB obj = new ClassB();
+        obj.nonStaticMethod1();
+    }
+
+    // 6) A non-static method calling a non-static method in another class
+    public void nonStaticMethod4() {
+        System.out.println("Non-static Method 4 in ClassA");
+        ClassB obj = new ClassB();
+        obj.nonStaticMethod2();
+    }
+
+    // 8) A non-static method calling a static method in another class
+    public void nonStaticMethod5() {
+        System.out.println("Non-static Method 5 in ClassA");
+        ClassB.staticMethod2();
+    }
+
+    public static void main(String[] args) {
+        // Test all the methods
+        ClassA.staticMethod1();
+        ClassA.staticMethod3();
+        ClassA.staticMethod4();
+        ClassA.staticMethod5();
+
+        ClassA obj = new ClassA();
+        obj.nonStaticMethod2();
+        obj.nonStaticMethod3();
+        obj.nonStaticMethod4();
+        obj.nonStaticMethod5();
+    }
+}
+
+// ClassB.java
+public class ClassB {
+
+    public static void staticMethod1() {
+        System.out.println("Static Method 1 in ClassB");
+    }
+
+    public static void staticMethod2() {
+        System.out.println("Static Method 2 in ClassB");
+    }
+
+    public void nonStaticMethod1() {
+        System.out.println("Non-static Method 1 in ClassB");
+    }
+
+    public void nonStaticMethod2() {
+        System.out.println("Non-static Method 2 in ClassB");
+    }
+}
